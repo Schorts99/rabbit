@@ -1,7 +1,11 @@
-%h1= @task.title
-%p= @task.description
-%p= @task.company
+#jobs
+  .job
+    %h1= @task.title
+    %p= @task.description
+    %p= @task.company
+    %button.btn.btn-default= link_to "Completar tarea", @task.url
 
-= link_to "Inicio", root_path
-= link_to "Editar", edit_task_path(@task)
-= link_to "Eliminar", task_path(@task), method: :delete, data: { confirm: "¿Estás seguro?" }
+#links
+  = link_to "Editar", edit_task_path(@task), class: 'btn btn-sm btn-default'
+  = link_to "Eliminar", task_path(@task), method: :delete, data: { confirm: "¿Estás seguro?" },
+  class: 'btn btn-sm btn-default'
